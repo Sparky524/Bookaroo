@@ -343,7 +343,7 @@ label,.section-top h2,.detail-info h2,.detail-info h3,.book h3,.panel h2,.panel 
 .avatar-editor input[type=range]{width:100%;accent-color:#d43d70}
 .avatar-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
 
-.admin-crown{color:#f5c96a;font-size:17px;line-height:1;margin-left:4px;text-shadow:0 0 8px #e2a84355}
+.admin-grant-form{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin:18px 0 24px}.admin-grant-form label{flex:1;min-width:220px}.admin-grant-form button{white-space:nowrap}.admin-crown{color:#f5c96a;font-size:17px;line-height:1;margin-left:4px;text-shadow:0 0 8px #e2a84355}
 .admin-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}
 .admin-metric{background:#26212d;border:1px solid #514050;border-radius:14px;padding:18px;display:grid;gap:7px}
 .admin-metric small{color:#bfb4c3}.admin-metric strong{font-size:29px;color:#f3eaf0}
@@ -368,10 +368,11 @@ label,.section-top h2,.detail-info h2,.detail-info h3,.book h3,.panel h2,.panel 
 <div class="page-back"><button class="btn btn-muted" type="button" id="adminBack">← Back to marketplace</button></div>
 <div class="section-top"><div><span class="admin-chip">BOOKAROO STAFF</span><h2>Admin center</h2><p class="muted small">Moderate reports, review marketplace activity, and manage listing quality.</p></div><button type="button" class="btn btn-muted" id="adminPageRefresh">↻ Refresh dashboard</button></div>
 <div class="admin-metrics" id="adminMetrics"></div>
-<div class="admin-tabs" role="group" aria-label="Admin dashboard sections"><button type="button" class="btn btn-muted active" data-admin-tab="reports">Reports</button><button type="button" class="btn btn-muted" data-admin-tab="listings">Listing audit</button><button type="button" class="btn btn-muted" data-admin-tab="overview">Marketplace overview</button></div>
+<div class="admin-tabs" role="group" aria-label="Admin dashboard sections"><button type="button" class="btn btn-muted active" data-admin-tab="reports">Reports</button><button type="button" class="btn btn-muted" data-admin-tab="listings">Listing audit</button><button type="button" class="btn btn-muted" data-admin-tab="overview">Marketplace overview</button><button type="button" class="btn btn-muted hidden" data-admin-tab="access" id="adminAccessTab">Admin access</button></div>
 <div id="adminReportsPane" class="admin-pane"><div class="section-top"><div><h3>Student reports</h3><p class="muted small">Review reported listings and take action.</p></div><select class="field admin-filter" id="adminReportFilter"><option value="all">All reports</option><option value="open">Open</option><option value="reviewed">Reviewed</option><option value="removed">Removed</option></select></div><div id="adminReportList"></div></div>
 <div id="adminListingsPane" class="admin-pane hidden"><div class="section-top"><div><h3>Listing quality check</h3><p class="muted small">Search current listings and open their details. Editing/removal is available through reported listings.</p></div></div><input id="adminListingSearch" class="field" type="search" placeholder="Search title, course, ISBN, or seller..." aria-label="Search admin listings"><div id="adminListingAudit"></div></div>
 <div id="adminOverviewPane" class="admin-pane hidden"><h3>Marketplace overview</h3><p class="muted small">Live totals from listings visible to your account. Report counts are restricted to admins.</p><div id="adminOverview"></div></div>
+<div id="adminAccessPane" class="admin-pane hidden"><h3>Manage administrator access</h3><p class="muted small">Only owners can grant or revoke moderator access. Owner accounts are protected and must be managed through the Supabase SQL Editor.</p><form id="adminGrantForm" class="admin-grant-form"><label class="wide">Verified student email<input id="adminGrantEmail" class="field" type="email" placeholder="student@ttu.edu" required autocomplete="off"></label><button class="btn btn-red" type="submit">Grant moderator access</button></form><div id="adminMembersList" aria-live="polite"></div></div>
 </section>
 <section class="panel hidden" id="marketplace"><div class="section-top"><div><h2>Explore textbooks</h2><p class="muted small">Find what you need for your next semester.</p></div><button type="button" class="btn btn-muted" id="marketRefreshBtn" aria-label="Refresh textbook listings">↻ Refresh listings</button></div><div id="marketView"><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search FIN, FIN 3320, ISBN or textbook..." aria-label="Search books"><select id="courseFilter" class="field" aria-label="Filter by course"><option value="">All courses</option></select><select id="sort" class="field" aria-label="Sort books"><option value="default">Featured order</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="newest">Newest first</option></select><select id="conditionFilter" class="field" aria-label="Filter by condition"><option value="">All conditions</option><option>Like new</option><option>Good</option><option>Worn</option></select><select id="availabilityFilter" class="field" aria-label="Filter by availability"><option value="">All books</option><option value="available">Available only</option><option value="sold">Sold</option><option value="saved">My favorites</option></select><input id="maxPrice" class="field" type="number" min="1" max="10000" placeholder="Max price ($)" aria-label="Maximum price"></div><div class="books" id="bookGrid"></div></div><div id="mineView" class="hidden"><p class="muted small">Purchases appear in My Account.</p><div class="books" id="mineGrid" style="margin-top:20px"></div></div></section>
 <section class="panel hidden" id="postSection"><div class="page-back"><button type="button" class="btn btn-muted" id="backFromForm">← Back to marketplace</button></div><div class="section-top"><div><h2 id="listingFormTitle">Sell a textbook</h2><p class="muted small">Give another Red Raider a great deal.</p></div></div><form id="postForm"><div class="form-grid"><label class="wide">Book title<input class="field" name="title" maxlength="100" required placeholder="e.g. Introduction to Economics"></label><label>Course subject<input class="field" id="subjectSearch" type="search" list="coursePrefixList" maxlength="4" placeholder="Search FIN, MGT, ACCT..." autocomplete="off" required><datalist id="coursePrefixList"></datalist><span class="muted small">Select a Texas Tech subject (2–4 letters).</span></label><label>Course number<input class="field" id="courseNumber" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required placeholder="e.g. 3310"><span class="muted small">Enter only the four digits.</span></label><label>Seller display name<input class="field" name="seller" maxlength="40" readonly required><span class="muted small">Automatically uses your account display name. Change it in My Account settings (48-hour cooldown).</span></label><label>Condition<select class="field" name="condition" required><option>Like new</option><option selected>Good</option><option>Worn</option></select></label><label>Book cover image URL (optional)<input class="field" name="image_url" type="url" maxlength="1000" placeholder="https://example.com/book-cover.jpg"></label><label>ISBN (optional)<input class="field" id="listingIsbn" name="isbn" inputmode="numeric" maxlength="17" placeholder="9780134685991"><span class="muted small">Find the barcode on the back of your book.</span><div class="isbn-tools"><button class="btn btn-muted" id="lookupIsbn" type="button">Find book details</button><button class="btn btn-muted" id="scanIsbn" type="button">Scan barcode</button></div><span id="isbnLookupStatus" class="muted small"></span></label><label>Upload a cover photo (optional)<input class="field" name="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><label class="wide">Book description (optional)<textarea class="field" name="description" rows="3" maxlength="1000" placeholder="Edition, notes, highlights, or anything buyers should know"></textarea></label><label>Asking price ($)<input class="field" name="price" type="number" min="1" max="10000" step="0.01" required placeholder="35.00"></label></div><div class="feature-panel"><strong>Edition details</strong><p class="muted small">Add the edition in your description and double-check the ISBN. Buyers may need a specific edition for class.</p></div><div class="form-footer"><button class="btn btn-red" id="listingSubmit" type="submit">Publish listing</button><button class="btn btn-muted" id="cancelForm" type="button">Cancel</button><span class="muted small">Only verified @ttu.edu accounts can post</span></div></form></section><div class="footer">Bookaroo · A student-built marketplace prototype · Not affiliated with Texas Tech University · Created by Zachary Heller</div></main>
@@ -477,6 +478,7 @@ function editBook(b){if(b.status==='sold'||b.status==='checkout'){toast('Sold or
 
 let adminReports=[];
 let adminTab='reports';
+let adminRole=null;
 function renderAdminDashboard(){
  if(!adminEnabled)return;
  const real=books.filter(b=>!b.is_demo),available=real.filter(b=>b.status==='available'),sold=real.filter(b=>b.status==='sold'),pending=real.filter(b=>b.status==='checkout');
@@ -497,7 +499,7 @@ function renderAdminDashboard(){
 function selectAdminTab(tab){
  adminTab=tab;
  for(const b of document.querySelectorAll('[data-admin-tab]'))b.classList.toggle('active',b.dataset.adminTab===tab);
- for(const name of ['reports','listings','overview'])$('admin'+name[0].toUpperCase()+name.slice(1)+'Pane').classList.toggle('hidden',name!==tab);
+ for(const name of ['reports','listings','overview','access'])$('admin'+name[0].toUpperCase()+name.slice(1)+'Pane').classList.toggle('hidden',name!==tab);
 }
 let adminEnabled=false;
 async function checkAdmin(){
@@ -505,10 +507,14 @@ async function checkAdmin(){
  if(!authenticated())return;
  const {data,error}=await db.rpc('bookaroo_is_admin');
  adminEnabled=!error&&data===true;
+ adminRole=null;
+ if(adminEnabled){const roleResult=await db.rpc('bookaroo_admin_my_role');if(!roleResult.error)adminRole=roleResult.data}
+ $('adminAccessTab').classList.toggle('hidden',adminRole!=='owner');
+ if(adminRole!=='owner'&&adminTab==='access')selectAdminTab('reports');
  $('adminNavBtn').classList.toggle('hidden',!adminEnabled);
  $('adminCrown').classList.toggle('hidden',!adminEnabled);
  if(!adminEnabled&&page==='admin'){page='market';showState()}
- if(adminEnabled){await loadAdminReports();renderAdminDashboard()}
+ if(adminEnabled){await loadAdminReports();renderAdminDashboard();if(adminRole==='owner')await loadAdminMembers()}
 }
 async function loadAdminReports(){
  if(!adminEnabled)return;
@@ -537,6 +543,37 @@ async function loadAdminReports(){
   actions.append(edit,resolve,remove);row.append(head,title,details,listing,actions);root.append(row)
  }
 }
+async function loadAdminMembers(){
+ if(adminRole!=='owner')return;
+ const root=$('adminMembersList');root.replaceChildren();
+ const {data,error}=await db.rpc('bookaroo_admin_members');
+ if(error){root.textContent='Could not load administrators: '+error.message;return}
+ for(const member of data||[]){
+  const row=make('div','admin-audit-row'),info=make('div');
+  info.append(make('strong','',member.email||'Unknown account'),make('p','muted small',member.role==='owner'?'Owner · Full access':'Moderator · Reports and listing moderation'));
+  row.append(info);
+  if(member.role==='moderator'){
+   const revoke=make('button','btn btn-muted','Remove admin access');revoke.type='button';
+   revoke.onclick=async()=>{
+    if(!confirm('Remove moderator access from '+member.email+'?'))return;
+    revoke.disabled=true;
+    const {error}=await db.rpc('bookaroo_admin_set_moderator',{p_email:member.email,p_enabled:false});
+    if(error){toast(error.message);revoke.disabled=false}else{toast('Moderator access removed');await loadAdminMembers()}
+   };row.append(revoke)
+  }else row.append(make('span','admin-chip','PROTECTED OWNER'));
+  root.append(row)
+ }
+ if(!data?.length)root.append(make('p','muted small','No administrators found.'));
+}
+$('adminGrantForm').addEventListener('submit',async e=>{
+ e.preventDefault();if(adminRole!=='owner')return;
+ const email=$('adminGrantEmail').value.trim().toLowerCase();
+ if(!email.endsWith('@ttu.edu')){toast('Enter a Texas Tech @ttu.edu email.');return}
+ const button=$('adminGrantForm').querySelector('button');button.disabled=true;
+ try{const {error}=await db.rpc('bookaroo_admin_set_moderator',{p_email:email,p_enabled:true});
+ if(error)toast(error.message);else{$('adminGrantEmail').value='';toast('Moderator access granted');await loadAdminMembers()}}
+ finally{button.disabled=false}
+});
 let avatarBlob=null,avatarImage=null,avatarScale=1,avatarOffsetX=0,avatarOffsetY=0,avatarDrag=null;
 function drawAvatar(){
  if(!avatarImage)return;
@@ -561,7 +598,7 @@ $('avatarCanvas').addEventListener('pointerup',()=>avatarDrag=null);
 $('avatarCanvas').addEventListener('pointercancel',()=>avatarDrag=null);
 $('avatarCancel').addEventListener('click',()=>{avatarBlob=null;avatarImage=null;$('profilePhoto').value='';$('avatarEditorBack').classList.add('hidden')});
 $('avatarApply').addEventListener('click',()=>{$('avatarCanvas').toBlob(blob=>{if(!blob){toast('Could not prepare image');return}avatarBlob=new File([blob],'profile.jpg',{type:'image/jpeg'});$('avatarEditorBack').classList.add('hidden');toast('Photo adjusted. Click Save profile to upload.')},'image/jpeg',.88)});
-$('adminNavBtn').addEventListener('click',()=>navigate('admin'));$('adminBack').addEventListener('click',()=>switchView('market'));$('adminPageRefresh').addEventListener('click',load);$('adminReportFilter').addEventListener('change',loadAdminReports);$('adminListingSearch').addEventListener('input',renderAdminDashboard);document.querySelectorAll('[data-admin-tab]').forEach(b=>b.addEventListener('click',()=>selectAdminTab(b.dataset.adminTab)));
+$('adminNavBtn').addEventListener('click',()=>navigate('admin'));$('adminBack').addEventListener('click',()=>switchView('market'));$('adminPageRefresh').addEventListener('click',async()=>{await load();if(adminRole==='owner')await loadAdminMembers()});$('adminReportFilter').addEventListener('change',loadAdminReports);$('adminListingSearch').addEventListener('input',renderAdminDashboard);document.querySelectorAll('[data-admin-tab]').forEach(b=>b.addEventListener('click',()=>selectAdminTab(b.dataset.adminTab)));
 
 async function saveProfile(e){e.preventDefault();if(!authenticated())return;const display_name=$('profileName').value.trim(),bio=$('profileBio').value.trim(),major=$('profileMajor').value.trim(),graduation_year=$('profileGrad').value?Number($('profileGrad').value):null;if(display_name.length<2||display_name.length>40||bio.length>280||major.length>80){toast('Check your profile fields.');return}let avatar_url=profiles.find(p=>p.user_id===session.user.id)?.avatar_url||null;if($('profilePhoto').files.length&&!avatarBlob){toast('Adjust your photo and select Use this photo before saving.');return}const file=avatarBlob;if(file){if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>2*1024*1024){toast('Profile photo must be JPG, PNG or WebP under 2 MB.');return}const ext=file.type==='image/png'?'png':file.type==='image/webp'?'webp':'jpg';const path=session.user.id+'/'+crypto.randomUUID()+'.'+ext;const {error}=await db.storage.from('profile-photos').upload(path,file,{contentType:file.type});if(error){toast(error.message);return}avatar_url=db.storage.from('profile-photos').getPublicUrl(path).data.publicUrl}const {error}=await db.from('seller_profiles').upsert({user_id:session.user.id,display_name,bio,major,graduation_year,avatar_url},{onConflict:'user_id'});if(error)toast(error.message);else{toast('Profile saved');avatarBlob=null;$('profilePhoto').value='';await load()}}
 async function uploadPhoto(file){if(!file)return null;if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>5*1024*1024)throw Error('Cover must be a JPG, PNG or WebP under 5 MB.');const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'}[file.type];const key=session.user.id+'/'+crypto.randomUUID()+'.'+ext;const {error}=await db.storage.from('book-covers').upload(key,file,{contentType:file.type,upsert:false});if(error)throw error;return db.storage.from('book-covers').getPublicUrl(key).data.publicUrl}
