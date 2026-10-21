@@ -541,6 +541,83 @@ label,.section-top h2,.detail-info h2,.detail-info h3,.book h3,.panel h2,.panel 
 .top .account-menu:not(.signed-in) #accountLabel{display:block;overflow:visible!important;text-overflow:clip!important;white-space:nowrap!important;font-size:12px!important;letter-spacing:0!important;flex:0 0 auto}
 .top .account-menu:not(.signed-in) #accountAvatar{flex:0 0 25px!important}
 @media(max-width:420px){.top .nav-right>.account-menu:not(.signed-in){width:172px!important;min-width:172px!important;max-width:172px!important;flex:0 0 172px!important}}
+/* Mobile-only refinements. Desktop layout is deliberately untouched. */
+@media (max-width:767px){
+ html,body{max-width:100%;overflow-x:clip}
+ .top .nav{padding:15px 16px!important;min-height:0!important;gap:12px!important;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}
+ .top .logo{font-size:24px;flex:0 0 auto}
+ .top .nav-right{display:flex;width:auto!important;max-width:100%;flex:1 1 auto;min-width:0;justify-content:flex-end!important;gap:7px!important;flex-wrap:wrap!important}
+ .top .nav-right>#adminNavBtn{height:38px!important;min-height:38px!important;width:auto!important;min-width:0!important;max-width:none!important;flex:0 0 auto!important;padding:0 10px!important}
+ .top .nav-right>#notificationBtn{height:38px!important;min-height:38px!important;width:38px!important;min-width:38px!important;max-width:38px!important;flex:0 0 38px!important;padding:0!important}
+ .top .nav-right>.account-menu.signed-in{height:38px!important;width:auto!important;min-width:116px!important;max-width:none!important;flex:0 0 auto!important}
+ .top .account-menu>#accountBtn{height:38px!important;min-height:38px!important;max-width:100%;padding:0 9px!important}
+ .top .nav-right>.account-menu:not(.signed-in){width:166px!important;min-width:166px!important;max-width:166px!important;flex:0 0 166px!important}
+ .top .account-menu:not(.signed-in) #accountLabel{font-size:11px!important}
+ .top .account-dropdown{left:auto!important;right:0!important;width:166px!important;min-width:166px!important;top:calc(100% + 5px)!important}
+ .top .hero{padding:38px 18px 45px!important}
+ .top .hero h1{font-size:clamp(34px,8.8vw,50px);line-height:1.08;letter-spacing:-1.3px}
+ .top .hero p{font-size:14px;line-height:1.6}
+ .hero-actions{gap:9px;align-items:center}
+ .hero-actions .btn{flex:1 1 100px;min-width:0}
+ .hero-actions .hero-about-link{flex:0 0 auto;white-space:nowrap}
+ .wrap{padding:0 14px!important;margin-top:15px!important}
+ .marketplace-insights{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+ .marketplace-insights .insight-card{min-width:0;padding:15px!important}
+ .marketplace-insights .savings-card{grid-column:1/-1}
+ .panel{padding:16px!important;margin-top:16px}
+ .section-top{gap:12px}
+ .section-top h2{font-size:21px}
+ .toolbar{grid-template-columns:1fr 1fr!important;gap:9px!important}
+ .toolbar>*:first-child{grid-column:1/-1}
+ .books{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+ .books .book{min-width:0}
+ .books .book .book-body{padding:12px!important}
+ .books .book h3{font-size:15px!important;overflow-wrap:anywhere}
+ .books .book .price{font-size:22px!important}
+ .books .book .book-bottom{gap:8px}
+ .books .book .book-bottom .btn{min-width:0;font-size:11px;padding:10px 7px!important}
+ .books .book .meta{overflow-wrap:anywhere}
+ .account-tabs{gap:6px!important}
+ .account-tab{padding:10px 11px!important;font-size:12px!important}
+ .admin-metrics,.dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .admin-pane,.feature-panel{padding:14px!important}
+ .checkout-layout,.detail-layout,.about-grid,.message-layout{grid-template-columns:minmax(0,1fr)!important}
+ .detail-cover{min-height:250px!important}
+ .detail-info h2{font-size:clamp(24px,6vw,31px)!important}
+ .form-grid{grid-template-columns:minmax(0,1fr)!important}
+ .form-grid .wide{grid-column:1}
+ .modal-back{padding:12px!important}.modal{max-height:calc(100dvh - 24px);overflow-y:auto}
+ .notification-panel{right:10px!important;left:auto!important;top:68px!important;width:min(390px,calc(100vw - 20px))!important;max-height:calc(100dvh - 80px)!important}
+}
+@media (max-width:520px){
+ .top .nav{align-items:flex-start;gap:10px!important}
+ .top .logo{margin-top:3px}
+ .top .nav-right{flex:1 1 100%;width:100%!important;justify-content:flex-end!important;flex-wrap:nowrap!important}
+ .top .nav-right>#adminNavBtn{font-size:11px!important}
+ .top .nav-right>.account-menu.signed-in{min-width:112px!important}
+ .top .hero{padding-top:32px!important}
+ .marketplace-insights{grid-template-columns:1fr!important}
+ .marketplace-insights .savings-card{grid-column:auto}
+ .books{grid-template-columns:minmax(0,1fr)!important}
+ .books .book .book-body{padding:16px!important}
+ .books .book h3{font-size:18px!important}
+ .books .book .price{font-size:25px!important}
+ .books .book .book-bottom .btn{font-size:12px;padding:11px 10px!important}
+ .toolbar{grid-template-columns:minmax(0,1fr)!important}
+ .toolbar>*:first-child{grid-column:auto}
+ .dashboard-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .account-tabs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .account-tab{min-width:0!important}
+ .detail-facts{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .message-compose{flex-wrap:wrap}.message-compose textarea{flex:1 1 100%}
+}
+@media (max-width:355px){
+ .top .nav-right{gap:5px!important}
+ .top .nav-right>#adminNavBtn{padding:0 7px!important}
+ .top .nav-right>.account-menu.signed-in{min-width:104px!important}
+ .top .account-menu>#accountBtn{font-size:10px!important;padding:0 6px!important}
+ .top #accountAvatar{width:21px!important;height:21px!important;flex-basis:21px!important}
+}
 </style></head><body>
 <header class="top"><div class="nav"><button class="logo logo-home" id="homeBtn" type="button" aria-label="Bookaroo home">book<span>aroo</span> <span aria-hidden="true">↗</span></button><div class="nav-right"><span class="nav-campus-label">Made for Red Raiders <span class="nav-campus-dot">·</span> Texas Tech University</span><button class="btn btn-outline hidden" id="adminNavBtn" type="button"><svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06-1.9 1.9-.06-.06A1.65 1.65 0 0 0 16 18.4a1.65 1.65 0 0 0-1 .6 1.65 1.65 0 0 0-.4 1.1V21h-2.7v-.9A1.65 1.65 0 0 0 10.4 18.4a1.65 1.65 0 0 0-1.82.33l-.06.06-1.9-1.9.06-.06A1.65 1.65 0 0 0 7 15.1a1.65 1.65 0 0 0-1.6-1.2H4.5v-2.7h.9A1.65 1.65 0 0 0 7 9.6a1.65 1.65 0 0 0-.33-1.82l-.06-.06 1.9-1.9.06.06A1.65 1.65 0 0 0 10.4 6a1.65 1.65 0 0 0 1.2-1.6v-.9h2.7v.9A1.65 1.65 0 0 0 16 6a1.65 1.65 0 0 0 1.82-.33l.06-.06 1.9 1.9-.06.06A1.65 1.65 0 0 0 19.4 9.6a1.65 1.65 0 0 0 1.1.4h.9v2.7h-.9a1.65 1.65 0 0 0-1.1 2.3Z"/></svg><span>Admin</span></button><button class="notification-trigger hidden" type="button" id="notificationBtn" title="Notifications" aria-label="Notifications" aria-expanded="false" aria-controls="notificationPanel"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg><span id="notificationBadge" class="notification-badge hidden">0</span></button><div class="account-menu" id="accountMenu"><button class="btn btn-light account-trigger" id="accountBtn" aria-haspopup="true" aria-expanded="false"><span class="account-avatar" id="accountAvatar" aria-hidden="true">?</span><span id="accountLabel">Log in / Sign up</span></button><div class="account-dropdown" id="accountDropdown" role="menu" aria-label="Account options"><button class="account-signout hidden" id="signOutBtn" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg> Sign out</button></div></div></div></div><div class="hero"><div class="eyebrow">Student-to-student textbook exchange</div><h1>Better books.<br>Better prices.</h1><p>Find your next textbook, sell the ones you don't need, and buy securely from fellow students.</p><div class="hero-actions"><button class="btn btn-light" id="browseBtn">Browse</button><button class="btn btn-outline" id="postBtn">Sell</button><button class="hero-about-link" id="aboutNavBtn" type="button">About us <span aria-hidden="true">↗</span></button></div></div></header>
 <div id="notificationPanel" class="notification-panel hidden" role="region" aria-label="Your notifications"><div class="notification-panel-header"><div><span class="notification-kicker">YOUR ACTIVITY</span><h3>Notifications</h3><p>Messages, orders and account updates</p></div><button type="button" id="closeNotifications" class="notification-close" aria-label="Close notifications">×</button></div><div class="notification-panel-toolbar"><span id="notificationPanelCount">Recent activity</span><button class="notification-read-btn" type="button" id="markNotificationsRead">Mark all read</button></div><div id="notificationList" class="notification-list"></div></div><main class="wrap"><section class="stats marketplace-insights" aria-label="Live marketplace overview">
