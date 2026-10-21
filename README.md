@@ -12,6 +12,16 @@
 
 ---
 
+## Project documentation
+
+- [Architecture and data flows](docs/ARCHITECTURE.md) — frontend, Supabase, Stripe and trust boundaries.
+- [Security audit and payment test matrix](docs/SECURITY_AUDIT.md) — findings, evidence and tests **not yet run**.
+- [Testing guide](docs/TESTING.md) — repeatable smoke and static checks.
+- [Debugging case studies](docs/DEBUGGING_CASE_STUDIES.md) — errors encountered, diagnoses and lessons learned.
+- [Repository guide](docs/REPOSITORY_GUIDE.md) — structure, screenshots, release checklist and safe cleanup.
+
+**Status:** Portfolio prototype. Stripe test-mode integration is not independently certified for production. See the [security audit](docs/SECURITY_AUDIT.md) before using real payments.
+
 ## About Bookaroo
 
 Bookaroo is a student-built marketplace designed to make buying and selling college textbooks easier and more affordable. Instead of paying bookstore prices or dealing with anonymous listings, students can discover books for their courses, view seller profiles, ask questions, and arrange an exchange with another student.
@@ -231,6 +241,16 @@ Known areas to validate before a public production launch:
 - Messaging privacy and notification delivery.
 - Mobile usability, accessibility, and error handling.
 - Moderation workflows and user-support processes.
+
+## Verification status
+
+An offline static check of the supplied frontend completed successfully on October 21, 2026 (HTML ID uniqueness, limited secret-pattern checks, and JavaScript syntax). **Authentication, RLS, webhook verification, payouts and Stripe transactions were not executed against the live backend.** The security test matrix remains open until test evidence is recorded.
+
+Run the local check from the repository root:
+
+```bash
+python3 scripts/check_frontend.py index.html
+```
 
 ## Roadmap
 
