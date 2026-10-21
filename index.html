@@ -115,6 +115,28 @@ html{background:#0b0d13}body{color:#f1eef3;background:radial-gradient(circle at 
 #postSection .section-top h2{color:#fff}.form-grid label,.profile-editor label{color:#ded7e0}
 @media(max-width:980px){.nav small{display:none}.nav{flex-wrap:wrap}.nav-right{gap:4px}}
 @media(max-width:620px){.nav{align-items:flex-start;gap:10px}.nav-right{width:100%;justify-content:flex-start;gap:5px}.nav-link{font-size:12px;padding:9px}.nav-right .btn{padding:9px;font-size:12px}.hero{padding-top:38px}.hero h1{letter-spacing:-1.4px}.hero-actions .btn{flex:1 1 145px}}
+
+/* Bookaroo refined dark surfaces — detail page and consistent actions */
+:root{--surface:#171923;--surface-raised:#20212c;--stroke:#373544;--text:#f7f2f6;--secondary:#bcb2c0;--accent:#f05272}
+#detailPage{background:linear-gradient(160deg,#191a25,#151620 68%)!important;border:1px solid #363440!important;box-shadow:0 22px 65px #0004!important}
+.detail-eyebrow{color:#ff8da8!important}.detail-info h2,.detail-info h3{color:#f7f3f8!important}.detail-course{color:#f7a4b7!important}.detail-price{color:#ff6488!important}
+.detail-cover{background:radial-gradient(ellipse at 50% 28%,#36303e 0%,#25212e 53%,#191a25 100%)!important;border:1px solid #48404f!important;box-shadow:inset 0 1px 0 #ffffff0c,0 18px 45px #0005!important;min-height:430px}
+.detail-cover img{filter:drop-shadow(0 20px 25px #0008);border-radius:4px}.detail-cover .cover-art{box-shadow:12px 18px 36px #0009;transform:rotate(-3deg)}
+.detail-caption,.detail-note{color:#b4aab9!important}.detail-tags span{background:#402534!important;color:#ffc3d0!important;border:1px solid #6b3b51}
+.detail-fact{background:#23232f!important;border:1px solid #3c3949!important;color:#f5edf4!important}.detail-fact small{color:#b7a9b8!important}.detail-fact strong{color:#fff!important}
+.detail-description{color:#cfc4d0!important}.detail-seller{background:#23232f!important;border:1px solid #3d3848!important;color:#f4edf4!important}.detail-seller strong{color:#e6dce6!important}.detail-seller .seller-link{color:#ff9db5!important}.detail-seller p{color:#c3b8c6!important}
+.detail-reserve{border-top:1px solid #3b3644!important}.detail-status{color:#c9b9c9!important}
+.btn,.nav-link,.favorite-btn,.seller-link{transition:background .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease}.btn:hover:not(:disabled){transform:translateY(-1px)}
+.btn-red{background:linear-gradient(120deg,#c82f57,#e34569)!important;border:1px solid #e95b7b!important;color:#fff!important;box-shadow:0 5px 18px #c82f5720}.btn-red:hover:not(:disabled){background:linear-gradient(120deg,#d83962,#f04e74)!important;box-shadow:0 7px 24px #d9346040}
+.btn-muted{background:#302431!important;color:#f8dbe5!important;border:1px solid #554052!important}.btn-muted:hover:not(:disabled){background:#453044!important;border-color:#82556e!important}
+.btn-light{background:#f6eaf0!important;color:#411a2c!important;border:1px solid #f6eaf0!important}.btn-outline{background:#261e2c!important;border:1px solid #80576c!important;color:#f9e6ee!important}
+.btn:focus-visible,.seller-link:focus-visible,.favorite-btn:focus-visible{outline:2px solid #ff91b0;outline-offset:3px}
+/* Keep fallback textbook art richly colored on cards and on the detail view. */
+.book-cover{background:radial-gradient(circle at 50% 22%,#393043,#1c1c27 72%)!important}.book-cover .cover-art,.detail-cover .cover-art{color:#fff!important;border:1px solid #ffffff24}.cover-art span,.cover-art strong{color:#fff!important;text-shadow:0 1px 2px #0003}
+.book-cover img{background:#292633;border-radius:5px}.book-actions .btn{border-color:#594454!important}
+@media(max-width:760px){.detail-cover{min-height:320px}.detail-layout{gap:24px}}
+
+#signedInNotice{background:#132d27!important;border:1px solid #2b6655!important;color:#b5f1d3!important;border-radius:14px!important}#authStatus.signed-in{color:#68d5a0!important}
 </style></head><body>
 <header class="top"><div class="nav"><button class="logo logo-home" id="homeBtn" type="button" aria-label="Bookaroo home">book<span>aroo</span> <span aria-hidden="true">↗</span></button><div class="nav-right"><button class="nav-link" id="navBrowseBtn" type="button">Browse</button><button class="nav-link" id="navSellBtn" type="button">Sell a book</button><button class="nav-link" id="navDashboardBtn" type="button">Dashboard</button><small>Made for Red Raiders · Texas Tech University</small><button class="btn btn-light" id="accountBtn">Log in / Sign up</button><button class="btn btn-outline hidden" id="signOutBtn">Sign out</button></div></div><div class="hero"><div class="eyebrow">Student-to-student textbook exchange</div><h1>Better books.<br>Better prices.</h1><p>Find your next textbook, sell the ones you don't need, and reserve a great deal before it's gone.</p><div class="hero-actions"><button class="btn btn-light" id="browseBtn">Browse textbooks</button><button class="btn btn-outline" id="postBtn">+ Sell a textbook</button><button class="btn btn-outline hidden" id="heroDashboardBtn">My dashboard</button></div></div></header>
 <main class="wrap"><section class="stats" aria-label="Marketplace statistics"><div class="stat"><span class="muted small">Available books</span><b id="availableCount">0</b></div><div class="stat"><span class="muted small">Available value</span><b id="availableValue">$0</b></div><div class="stat"><span class="muted small">My reservations</span><b id="myCount">0 / 3</b></div></section>
