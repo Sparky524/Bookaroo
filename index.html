@@ -839,7 +839,7 @@ async function loadAdminMembers(){
  for(const member of data||[]){
   const row=make('div','admin-audit-row'),info=make('div');
   info.append(make('strong','',member.email||'Unknown account'),make('p','muted small',member.role==='owner'?'Owner · Full access':'Moderator · Reports and listing moderation'));
-  if(paid){const stages=make('div','order-tracker');for(const [label,done] of [['Payment verified',true],['Arrange handoff (coordinate with seller)',false],['Received',!!o.received_at||o.status==='received'||o.status==='completed']]){stages.append(make('span',done?'order-stage done':'order-stage', (done?'✓ ':'○ ')+label))}info.append(stages)}row.append(info);
+  row.append(info);
   if(member.role==='moderator'){
    const revoke=make('button','btn btn-muted','Remove admin access');revoke.type='button';
    revoke.onclick=async()=>{
