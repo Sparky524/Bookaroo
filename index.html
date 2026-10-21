@@ -297,6 +297,41 @@ label,.section-top h2,.detail-info h2,.detail-info h3,.book h3,.panel h2,.panel 
 #detailPage .detail-cover{min-height:385px}
 @media(max-width:760px){#detailPage .detail-layout{grid-template-columns:1fr;gap:25px}#detailPage .detail-cover{min-height:290px}#detailPage .detail-media{position:static}#detailPage .detail-info h2{font-size:30px}}
 @media(max-width:410px){#detailPage .detail-facts{grid-template-columns:1fr 1fr}#detailPage .detail-report-row{align-items:flex-start;flex-direction:column}}
+
+.scanner-panel{margin-top:12px;padding:15px;border:1px solid #554154;background:#201d2a;border-radius:14px;display:grid;gap:10px}
+.scanner-heading{font-size:13px;font-weight:750;color:#f3dce7}
+#bookarooScannerVideo{overflow:hidden;border-radius:10px;min-height:130px}
+#bookarooScannerVideo video{width:100%!important;max-height:300px;object-fit:cover}
+
+/* Student seller profile — compact, informative, responsive */
+.seller-profile-modal{width:min(100%,540px);max-height:min(90vh,850px);overflow-y:auto;padding:0!important;border:1px solid #474052!important;background:#1a1a25!important}
+.seller-modal-head{padding:21px 25px 10px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.seller-modal-kicker{font-size:10px;font-weight:850;letter-spacing:.13em;color:#f5a0bb}
+.seller-modal-x{width:32px;height:32px;border:1px solid #534251;border-radius:9px;background:#292431;color:#f4e6ef;font-size:22px;line-height:1}
+#sellerDetails{padding:4px 25px 0}
+.seller-modal-identity{display:flex;align-items:center;gap:16px;margin:7px 0 17px}
+.seller-modal-avatar{width:76px;height:76px;flex:0 0 76px;border-radius:19px;border:2px solid #815068;background:#4b283d;color:#ffe5ef;display:grid;place-items:center;font-size:32px;font-weight:850;overflow:hidden}
+.seller-modal-avatar img{width:100%;height:100%;object-fit:cover}
+.seller-modal-name-block{min-width:0}.seller-modal-name-block h2{margin:0 0 5px!important;font-size:24px;line-height:1.15;overflow-wrap:anywhere}
+.seller-modal-name-block p{margin:0!important;font-size:12px;color:#b9aebe}
+.seller-modal-bio{background:#23222e;border:1px solid #3b3544;border-radius:13px;padding:14px 16px;margin:0 0 15px!important;color:#e0d5df!important;font-size:14px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.seller-modal-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 16px}
+.seller-modal-facts>div{padding:12px 14px;border-radius:12px;background:#22212d;border:1px solid #393542;display:grid;gap:5px;min-width:0}
+.seller-modal-facts span,.seller-modal-rating-top>span:first-child{font-size:10px;letter-spacing:.1em;font-weight:850;color:#d9a1b7}
+.seller-modal-facts strong{font-size:13px;overflow-wrap:anywhere}
+.seller-modal-rating{padding:16px;border:1px solid #6c4359;border-radius:15px;background:linear-gradient(135deg,#332433,#24202d);margin:15px 0}
+.seller-modal-rating-top,.seller-modal-rating-body{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.seller-modal-review-count{font-size:11px;color:#c7b7c5}.seller-modal-rating-body{justify-content:flex-start;margin-top:10px}
+.seller-modal-score{font-size:38px;letter-spacing:-.05em;color:#fff}.seller-modal-rating-detail{display:grid;gap:4px}
+.seller-modal-stars{font-size:20px;letter-spacing:2px;color:#f6c675;white-space:nowrap}.seller-modal-rating-detail small{font-size:12px;color:#c9b8c6}
+.seller-modal-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.seller-modal-metrics>div{display:grid;gap:4px;text-align:center;background:#24232f;border:1px solid #3d3747;border-radius:12px;padding:12px}
+.seller-modal-metrics strong{font-size:22px;color:#fff}.seller-modal-metrics span{font-size:11px;color:#bdb2c0}
+.seller-modal-reviews{border-top:1px solid #3b3544;padding-top:14px}.seller-modal-reviews h3{font-size:15px;margin:0 0 9px}
+.seller-modal-review{padding:10px 0;border-bottom:1px solid #35303e}.seller-modal-review .seller-modal-stars{font-size:14px}.seller-modal-review p{margin:5px 0 0!important;font-size:13px;line-height:1.45;color:#d5c9d5}
+.seller-modal-demo{font-size:12px!important;color:#e9c68f!important;padding:10px 12px;background:#3b3028;border-radius:10px}
+.seller-modal-footer{margin:0!important;padding:15px 25px 23px;border-top:1px solid #383341}
+@media(max-width:520px){.seller-modal-head{padding:17px 17px 8px}#sellerDetails{padding:3px 17px 0}.seller-modal-footer{padding:13px 17px 18px}.seller-modal-avatar{width:62px;height:62px;flex-basis:62px}.seller-modal-name-block h2{font-size:20px}}
 </style></head><body>
 <header class="top"><div class="nav"><button class="logo logo-home" id="homeBtn" type="button" aria-label="Bookaroo home">book<span>aroo</span> <span aria-hidden="true">↗</span></button><div class="nav-right"><small>Made for Red Raiders · Texas Tech University</small><button class="btn btn-light account-trigger" id="accountBtn"><span class="account-avatar" id="accountAvatar" aria-hidden="true">?</span><span id="accountLabel">Log in / Sign up</span></button><button class="btn btn-outline hidden" id="signOutBtn">Sign out</button></div></div><div class="hero"><div class="eyebrow">Student-to-student textbook exchange</div><h1>Better books.<br>Better prices.</h1><p>Find your next textbook, sell the ones you don't need, and buy securely from fellow students.</p><div class="hero-actions"><button class="btn btn-light" id="browseBtn">Browse</button><button class="btn btn-outline" id="postBtn">Sell</button></div></div></header>
 <main class="wrap"><section class="stats marketplace-insights" aria-label="Live marketplace overview">
@@ -311,7 +346,7 @@ label,.section-top h2,.detail-info h2,.detail-info h3,.book h3,.panel h2,.panel 
 <section class="panel hidden" id="checkoutPage"><button class="btn btn-muted" id="checkoutBack" type="button">← Back to textbook</button><div class="checkout-compact"><div class="checkout-heading"><p class="detail-eyebrow">SECURE PURCHASE</p><h2>Review your order</h2><p class="muted small">Confirm your textbook before continuing to secure payment.</p></div><div id="checkoutSummary" class="checkout-summary"></div><div class="checkout-box"><div class="checkout-security"><strong>Secure checkout</strong><span class="muted small">Payments handled by Stripe · Bookaroo never sees your card details</span></div><button class="btn btn-red" id="checkoutPay" type="button">Continue to secure payment ↗</button><p class="muted small checkout-footnote">Availability is verified at checkout. Arrange pickup or delivery with the seller before paying.</p></div></div></section>
 <section class="panel hidden" id="marketplace"><div class="section-top"><div><h2>Explore textbooks</h2><p class="muted small">Find what you need for your next semester.</p></div></div><div id="marketView"><div class="toolbar"><input id="search" class="field" type="search" placeholder="Search FIN, FIN 3320, ISBN or textbook..." aria-label="Search books"><select id="courseFilter" class="field" aria-label="Filter by course"><option value="">All courses</option></select><select id="sort" class="field" aria-label="Sort books"><option value="default">Featured order</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="newest">Newest first</option></select><select id="conditionFilter" class="field" aria-label="Filter by condition"><option value="">All conditions</option><option>Like new</option><option>Good</option><option>Worn</option></select><select id="availabilityFilter" class="field" aria-label="Filter by availability"><option value="">All books</option><option value="available">Available only</option><option value="sold">Sold</option><option value="saved">My favorites</option></select><input id="maxPrice" class="field" type="number" min="1" max="10000" placeholder="Max price ($)" aria-label="Maximum price"></div><div class="books" id="bookGrid"></div></div><div id="mineView" class="hidden"><p class="muted small">Purchases appear in My Account.</p><div class="books" id="mineGrid" style="margin-top:20px"></div></div></section>
 <section class="panel hidden" id="postSection"><div class="page-back"><button type="button" class="btn btn-muted" id="backFromForm">← Back to marketplace</button></div><div class="section-top"><div><h2 id="listingFormTitle">Sell a textbook</h2><p class="muted small">Give another Red Raider a great deal.</p></div></div><form id="postForm"><div class="form-grid"><label class="wide">Book title<input class="field" name="title" maxlength="100" required placeholder="e.g. Introduction to Economics"></label><label>Course subject<input class="field" id="subjectSearch" type="search" list="coursePrefixList" maxlength="4" placeholder="Search FIN, MGT, ACCT..." autocomplete="off" required><datalist id="coursePrefixList"></datalist><span class="muted small">Select a Texas Tech subject (2–4 letters).</span></label><label>Course number<input class="field" id="courseNumber" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required placeholder="e.g. 3310"><span class="muted small">Enter only the four digits.</span></label><label>Display name<input class="field" name="seller" maxlength="40" required placeholder="e.g. Taylor"></label><label>Condition<select class="field" name="condition" required><option>Like new</option><option selected>Good</option><option>Worn</option></select></label><label>Book cover image URL (optional)<input class="field" name="image_url" type="url" maxlength="1000" placeholder="https://example.com/book-cover.jpg"></label><label>ISBN (optional)<input class="field" id="listingIsbn" name="isbn" inputmode="numeric" maxlength="17" placeholder="9780134685991"><span class="muted small">Find the barcode on the back of your book.</span><div class="isbn-tools"><button class="btn btn-muted" id="lookupIsbn" type="button">Find book details</button><button class="btn btn-muted" id="scanIsbn" type="button">Scan barcode</button></div><span id="isbnLookupStatus" class="muted small"></span></label><label>Upload a cover photo (optional)<input class="field" name="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><label class="wide">Book description (optional)<textarea class="field" name="description" rows="3" maxlength="1000" placeholder="Edition, notes, highlights, or anything buyers should know"></textarea></label><label>Asking price ($)<input class="field" name="price" type="number" min="1" max="10000" step="0.01" required placeholder="35.00"></label></div><div class="feature-panel"><strong>Edition details</strong><p class="muted small">Add the edition in your description and double-check the ISBN. Buyers may need a specific edition for class.</p></div><div class="form-footer"><button class="btn btn-red" id="listingSubmit" type="submit">Publish listing</button><button class="btn btn-muted" id="cancelForm" type="button">Cancel</button><span class="muted small">Only verified @ttu.edu accounts can post</span></div></form></section><div class="footer">Bookaroo · A student-built marketplace prototype · Not affiliated with Texas Tech University · Created by Zachary Heller</div></main>
-<div id="sellerBack" class="modal-back hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="sellerTitle"><h2 id="sellerTitle">Seller profile</h2><div id="sellerDetails"></div><div class="modal-actions"><button class="btn btn-red" id="sellerClose">Close</button></div></div></div><div id="toast" class="toast hidden" role="status"></div><div id="modalBack" class="modal-back hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">Confirm action</h2><p id="modalText"></p><div class="modal-actions"><button class="btn btn-muted" id="modalCancel">Go back</button><button class="btn btn-red" id="modalConfirm">Confirm</button></div></div></div>
+<div id="sellerBack" class="modal-back hidden" role="presentation"><div class="modal seller-profile-modal" role="dialog" aria-modal="true" aria-labelledby="sellerTitle"><div class="seller-modal-head"><span class="seller-modal-kicker">BOOKAROO / STUDENT PROFILE</span><button class="seller-modal-x" id="sellerCloseTop" type="button" aria-label="Close seller profile">×</button></div><div id="sellerDetails"></div><div class="modal-actions seller-modal-footer"><button class="btn btn-muted" id="sellerClose" type="button">Close profile</button></div></div></div><div id="toast" class="toast hidden" role="status"></div><div id="modalBack" class="modal-back hidden" role="presentation"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">Confirm action</h2><p id="modalText"></p><div class="modal-actions"><button class="btn btn-muted" id="modalCancel">Go back</button><button class="btn btn-red" id="modalConfirm">Confirm</button></div></div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script>
 (()=>{'use strict';
@@ -370,7 +405,43 @@ function renderDetail(){const b=books.find(x=>x.id===detailId);if(!b){switchView
 function renderExtras(){if(!authenticated())return;const mine=books.filter(b=>b.seller_id===session.user.id&&!b.is_demo);const paid=orders.filter(o=>o.seller_id===session.user.id&&['paid','completed','received'].includes(o.status));$('sellerSummary').replaceChildren(...[['Active',mine.filter(b=>b.status==='available').length],['Sold',mine.filter(b=>b.status==='sold').length],['Pending',mine.filter(b=>b.status==='checkout').length],['Verified sales',paid.length]].map(([label,value])=>{const x=make('div');x.append(make('strong','',String(value)),make('small','',label));return x}));const root=$('alertList');root.replaceChildren();if(!wantedCourses.length){root.append(make('p','muted small','No watched courses yet.'));return}for(const watch of wantedCourses){const matches=books.filter(b=>!b.is_demo&&b.status==='available'&&String(b.course).toUpperCase()===watch.course.toUpperCase());const row=make('div','watch-row'),info=make('div');info.append(make('strong','',esc(watch.course)),make('p','muted small',matches.length+' real listing'+(matches.length===1?'':'s')+' available'));const remove=make('button','btn btn-muted','Remove');remove.type='button';remove.onclick=async()=>{const {error}=await db.from('book_watches').delete().eq('id',watch.id);if(error)toast(error.message);else await load()};row.append(info,remove);root.append(row)}}
 function renderDashboard(){renderExtras();if(!authenticated())return;renderAccountRating();const mine=books.filter(b=>b.seller_id===session.user.id),saved=books.filter(b=>favorites.includes(b.id));$('listingCount').textContent=mine.length;$('savedCount').textContent=saved.length;$('dashReserved').textContent=orders.filter(o=>o.buyer_id===session.user.id&&o.status==='paid').length;const list=(id,items,own)=>{const root=$(id);root.replaceChildren();if(!items.length){root.append(make('p','muted small',own?'No listings yet. Post your first textbook!':'No saved books yet.'));return}for(const b of items){const row=make('div','dash-item listing-row'),thumb=make('div','listing-thumb'),info=make('div','listing-info'),top=make('div','listing-title-row'),name=make('strong','listing-title');name.textContent=b.title;const status=String(b.status||'available').toLowerCase(),chip=make('span','listing-status status-'+(status==='sold'?'sold':status==='checkout'?'pending':'available'));chip.textContent=status==='checkout'?'Pending':status.charAt(0).toUpperCase()+status.slice(1);top.append(name,chip);const meta=make('div','listing-meta');const course=make('span','listing-course');course.textContent=b.course||'Course not specified';const price=make('strong','listing-price');price.textContent=money(b.price);meta.append(course,price);if(b.is_demo){const demo=make('span','listing-demo');demo.textContent='DEMO';meta.append(demo)}info.append(top,meta);if(b.image_url&&/^https:\/\//i.test(b.image_url)){const image=document.createElement('img');image.src=b.image_url;image.alt='';image.loading='lazy';image.onerror=()=>{thumb.replaceChildren();thumb.textContent='▤'};thumb.append(image)}else thumb.textContent='▤';const actions=make('div','listing-actions');const btn=make('button','btn btn-muted listing-edit',own?'Edit listing':'View book');btn.type='button';btn.onclick=()=>own?editBook(b):openDetail(b.id);actions.append(btn);if(own&&b.status!=='sold'&&b.status!=='checkout'){const del=make('button','listing-remove','Remove');del.type='button';del.onclick=()=>deleteBook(b);actions.append(del)}else if(!own){const del=make('button','listing-remove','Unsave');del.type='button';del.onclick=()=>toggleFavorite(b.id);actions.append(del)}row.append(thumb,info,actions);root.append(row)}};list('myListings',mine,true);list('savedListings',saved,false);const profile=profiles.find(p=>p.user_id===session.user.id);$('profileName').value=profile?.display_name||'';$('profileBio').value=profile?.bio||'';$('profileMajor').value=profile?.major||'';$('profileGrad').value=profile?.graduation_year||'';renderOrders()}
 async function toggleFavorite(id){const saved=favorites.includes(id);const q=db.from('book_favorites');const {error}=saved?await q.delete().eq('user_id',session.user.id).eq('book_id',id):await q.insert({user_id:session.user.id,book_id:id});if(error){toast(error.message);return}favorites=saved?favorites.filter(x=>x!==id):[...favorites,id];render();if(page==='detail')renderDetail()}
-function openSeller(b){const profile=profiles.find(p=>p.user_id===b.seller_id),rs=reviews.filter(r=>r.seller_id===b.seller_id),avg=rs.length?(rs.reduce((n,r)=>n+r.rating,0)/rs.length).toFixed(1):'No ratings yet';$('sellerTitle').textContent=profile?.display_name||b.seller_name;const root=$('sellerDetails');root.replaceChildren();if(profile?.avatar_url){const img=document.createElement('img');img.src=profile.avatar_url;img.className='seller-avatar';img.alt='Seller profile picture';root.append(img)}root.append(make('p','muted',esc(profile?.bio||'Bookaroo textbook seller.')),make('p','muted small',esc((profile?.major?'Major: '+profile.major+' · ':'')+(profile?.graduation_year?'Class of '+profile.graduation_year:'Texas Tech student'))),make('p','muted small',esc('Seller rating: '+avg+(rs.length?' / 5 · '+rs.length+' verified reviews':''))),make('p','muted small',esc(books.filter(x=>x.seller_id===b.seller_id).length+' listings')));for(const r of rs.slice(0,8)){const item=make('div','review-item');item.append(make('strong','',esc('★'.repeat(r.rating)+'☆'.repeat(5-r.rating))),make('p','muted',esc(r.comment||'Verified purchase')));root.append(item)}$('sellerBack').classList.remove('hidden')}
+function openSeller(b){
+ const profile=profiles.find(p=>p.user_id===b.seller_id);
+ const name=profile?.display_name||b.seller_name||'Texas Tech seller';
+ const rs=reviews.filter(r=>r.seller_id===b.seller_id&&Number.isInteger(Number(r.rating))&&Number(r.rating)>=1&&Number(r.rating)<=5);
+ const count=rs.length,average=count?rs.reduce((sum,r)=>sum+Number(r.rating),0)/count:0;
+ const listings=books.filter(x=>x.seller_id===b.seller_id);
+ const available=listings.filter(x=>x.status==='available'&&!x.is_demo);
+ const completed=listings.filter(x=>x.status==='sold'&&!x.is_demo);
+ $('sellerTitle').textContent=name;
+ const root=$('sellerDetails');root.replaceChildren();
+ const header=make('div','seller-modal-identity');
+ const avatar=make('div','seller-modal-avatar');
+ if(profile?.avatar_url&&/^https:\/\//i.test(profile.avatar_url)){
+  const img=document.createElement('img');img.src=profile.avatar_url;img.alt=name+' profile picture';img.onerror=()=>{avatar.replaceChildren();avatar.textContent=name.charAt(0).toUpperCase()};avatar.append(img)
+ }else avatar.textContent=name.charAt(0).toUpperCase();
+ const identity=make('div','seller-modal-name-block');
+ identity.append(make('h2','',esc(name)),make('p','', 'Texas Tech student · Bookaroo seller'));
+ header.append(avatar,identity);root.append(header);
+ if(profile?.bio){const about=make('p','seller-modal-bio');about.textContent=profile.bio;root.append(about)}
+ const facts=make('div','seller-modal-facts');
+ if(profile?.major){const item=make('div');item.append(make('span','','MAJOR'),make('strong','',esc(profile.major)));facts.append(item)}
+ if(profile?.graduation_year){const item=make('div');item.append(make('span','','GRADUATION'),make('strong','',esc('Class of '+profile.graduation_year)));facts.append(item)}
+ if(facts.childElementCount)root.append(facts);
+ const rating=make('section','seller-modal-rating');
+ const ratingTop=make('div','seller-modal-rating-top');ratingTop.append(make('span','','SELLER REPUTATION'),make('span','seller-modal-review-count',count+' verified review'+(count===1?'':'s')));
+ const ratingBody=make('div','seller-modal-rating-body');
+ const score=make('strong','seller-modal-score',count?average.toFixed(1):'—');
+ const side=make('div','seller-modal-rating-detail');side.append(make('div','seller-modal-stars',count?'★'.repeat(Math.round(average))+'☆'.repeat(5-Math.round(average)):'☆☆☆☆☆'),make('small','',count?'Average rating out of 5':'New seller · No ratings yet'));
+ ratingBody.append(score,side);rating.append(ratingTop,ratingBody);root.append(rating);
+ const metrics=make('div','seller-modal-metrics');
+ for(const [number,label] of [[available.length,'Available books'],[completed.length,'Sold books']]){const cell=make('div');cell.append(make('strong','',String(number)),make('span','',label));metrics.append(cell)}root.append(metrics);
+ if(count){const reviewSection=make('section','seller-modal-reviews');reviewSection.append(make('h3','','Recent buyer reviews'));
+  for(const r of rs.slice(0,4)){const item=make('div','seller-modal-review');item.append(make('span','seller-modal-stars','★'.repeat(Number(r.rating))+'☆'.repeat(5-Number(r.rating))),make('p','',esc(r.comment||'Verified purchase')));reviewSection.append(item)}root.append(reviewSection)
+ }
+ if(b.is_demo){root.append(make('p','seller-modal-demo','This seller is shown on an example listing. Demo listings are not available for purchase.'))}
+ $('sellerBack').classList.remove('hidden');
+}
 async function reportListing(b){const reason=prompt('Why are you reporting “'+b.title+'”? Please describe the issue (10–500 characters).');if(reason===null)return;if(reason.trim().length<10||reason.length>500){toast('Please enter a reason between 10 and 500 characters.');return}const {error}=await db.from('book_reports').insert({book_id:b.id,reporter_id:session.user.id,reason:reason.trim()});toast(error?error.message:'Report submitted for review. Thank you.')}
 async function deleteBook(b){if(!confirm('Permanently remove “'+b.title+'”? This removes the listing and any saved references.'))return;const {error}=await db.from('books').delete().eq('id',b.id).eq('seller_id',session.user.id);if(error)toast(error.message);else{toast('Listing removed');await load()}}
 function openListingForm(book=null){if(!authenticated()){showAuth();return}editingId=book?.id||null;const f=$('postForm');f.reset();$('subjectSearch').value=coursePrefix(book?.course||'');$('courseNumber').value=String(book?.course||'').match(/\b(\d{4})\b/)?.[1]||'';if(book){for(const [field,value] of Object.entries({title:book.title,seller:book.seller_name,condition:book.condition,image_url:book.image_url||'',isbn:book.isbn||'',description:book.description||'',price:book.price})){if(f.elements.namedItem(field))f.elements.namedItem(field).value=value}}$('listingFormTitle').textContent=book?'Edit textbook listing':'Sell a textbook';$('listingSubmit').textContent=book?'Save changes':'Publish listing';navigate('form')}
@@ -424,9 +495,102 @@ async function post(e){e.preventDefault();if(!authenticated()){showAuth();return
 $('requiredIsbn').addEventListener('input',()=>{const b=books.find(x=>x.id===detailId),want=$('requiredIsbn').value.replace(/[^0-9X]/gi,'').toUpperCase(),actual=String(b?.isbn||'').replace(/[^0-9X]/gi,'').toUpperCase();$('isbnMatch').textContent=!want?'':!actual?'Seller did not provide an ISBN. Ask before buying.':want===actual?'ISBN matches the listing. Still verify the edition.':'ISBN does not match this listing. Check with the seller before buying.'});
 $('alertForm').addEventListener('submit',async e=>{e.preventDefault();if(!authenticated())return;const course=$('alertCourse').value.trim().toUpperCase().replace(/\s+/g,' ');const match=course.match(/^([A-Z]{2,4})\s+([0-9]{4})$/);if(!match||!TTU_COURSE_PREFIXES.includes(match[1])){toast('Use a Texas Tech course such as FIN 3320.');return}const {error}=await db.from('book_watches').upsert({user_id:session.user.id,course},{onConflict:'user_id,course'});if(error)toast('Could not save alert: '+error.message);else{$('alertForm').reset();await load();toast('Course saved. Matches will appear in My Account.')}});
 $('reportBook').addEventListener('click',async()=>{if(!authenticated()){showAuth();toast('Sign in to report a listing.');return}const reason=prompt('Why are you reporting this listing? (Spam, misleading details, inappropriate content, other)');if(!reason)return;if(reason.trim().length<5||reason.length>500){toast('Please enter 5–500 characters.');return}const {error}=await db.from('book_reports').insert({book_id:detailId,reporter_id:session.user.id,reason:reason.trim()});toast(error?'Could not submit report: '+error.message:'Report submitted for review. Thank you.')});
-async function lookupIsbn(){const isbn=$('listingIsbn').value.replace(/[^0-9X]/gi,'');if(!/^(?:[0-9]{13}|[0-9]{9}[0-9X])$/i.test(isbn)){toast('Enter a valid 10- or 13-character ISBN first.');return}const status=$('isbnLookupStatus');status.textContent='Looking up book details…';try{const res=await fetch('https://openlibrary.org/isbn/'+encodeURIComponent(isbn)+'.json');if(!res.ok)throw Error('No matching book found');const b=await res.json();if(b.title)$('postForm').elements.namedItem('title').value=b.title;const details=[b.edition_name,b.publish_date].filter(Boolean).join(' · ');if(details){const desc=$('postForm').elements.namedItem('description');if(!desc.value)desc.value='Edition: '+details}status.textContent='Details found. Verify title and edition against your physical book.'}catch(e){status.textContent='Could not find this ISBN. You can enter book details manually.'}}
-$('lookupIsbn').addEventListener('click',lookupIsbn);$('scanIsbn').addEventListener('click',async()=>{if(!('BarcodeDetector' in window)||!navigator.mediaDevices?.getUserMedia){toast('Barcode scanning is not supported here. Enter the ISBN manually.');return}let stream;try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});const video=document.createElement('video');video.srcObject=stream;video.setAttribute('playsinline','');video.muted=true;video.style.cssText='width:100%;max-height:220px;border-radius:12px;margin-top:10px';$('scanIsbn').after(video);await video.play();const detector=new BarcodeDetector({formats:['ean_13','ean_8']});let found=false;for(let i=0;i<35&&!found;i++){const codes=await detector.detect(video);const code=codes.find(x=>/^97[89]\d{10}$/.test(x.rawValue));if(code){$('listingIsbn').value=code.rawValue;found=true}if(!found)await new Promise(r=>setTimeout(r,250))}video.remove();if(found){toast('ISBN scanned successfully');await lookupIsbn()}else toast('No ISBN detected. Try entering it manually.')}catch(e){toast('Camera unavailable. Enter the ISBN manually.')}finally{stream?.getTracks().forEach(t=>t.stop())}});
-$('coursePrefixList').replaceChildren(...TTU_COURSE_PREFIXES.map(p=>new Option(p+' — '+(TTU_SUBJECTS[p]||'Texas Tech subject'),p)));document.querySelectorAll('[data-order-tab]').forEach(btn=>btn.addEventListener('click',()=>{orderTab=btn.dataset.orderTab;renderOrders()}));$('signupForm').addEventListener('submit',signUp);$('loginForm').addEventListener('submit',login);$('resetPassword').addEventListener('click',resetPassword);$('postForm').addEventListener('submit',post);$('checkoutBack').addEventListener('click',()=>openDetail(checkoutId));$('checkoutPay').addEventListener('click',purchaseNow);$('connectStripe').addEventListener('click',connectStripe);$('signOutBtn').addEventListener('click',async()=>{await db.auth.signOut();toast('Signed out')});$('accountBtn').addEventListener('click',()=>{if(authenticated()){switchView('dashboard')}else{showAuth()}});$('modalCancel').addEventListener('click',closeModal);$('modalConfirm').addEventListener('click',confirmModal);$('modalBack').addEventListener('click',e=>{if(e.target===$('modalBack'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('browseBtn').addEventListener('click',browseMarketplace);$('postBtn').addEventListener('click',()=>openListingForm());$('homeBtn').addEventListener('click',browseMarketplace);$('detailBack').addEventListener('click',()=>switchView('market'));$('backFromForm').addEventListener('click',()=>switchView('market'));$('backFromDashboard').addEventListener('click',()=>switchView('market'));$('cancelForm').addEventListener('click',()=>switchView('market'));let searchRenderTimer;$('search').addEventListener('input',()=>{clearTimeout(searchRenderTimer);searchRenderTimer=setTimeout(render,110)});$('sort').addEventListener('change',render);$('courseFilter').addEventListener('change',render);$('conditionFilter').addEventListener('change',render);$('availabilityFilter').addEventListener('change',render);$('maxPrice').addEventListener('input',render);$('refreshBtn').addEventListener('click',load);$('profileForm').addEventListener('submit',saveProfile);$('sellerClose').addEventListener('click',()=>$('sellerBack').classList.add('hidden'));$('sellerBack').addEventListener('click',e=>{if(e.target===$('sellerBack'))$('sellerBack').classList.add('hidden')});
+
+// ISBN identifies a book/edition, not the Texas Tech course that requires it.
+// Course suggestions are only populated when an exact, reliable course association exists.
+async function lookupIsbn(){
+ const isbn=$('listingIsbn').value.replace(/[^0-9X]/gi,'').toUpperCase();
+ const status=$('isbnLookupStatus'), form=$('postForm');
+ if(!/^(?:[0-9]{13}|[0-9]{9}[0-9X])$/.test(isbn)){status.textContent='Enter a 10- or 13-character ISBN first.';return}
+ status.textContent='Searching book catalogs…';
+ let book=null, source='', authors=[], cover='', description='',publisher='',year='',edition='';
+ try{
+  const res=await fetch('https://www.googleapis.com/books/v1/volumes?q='+encodeURIComponent('isbn:'+isbn)+'&maxResults=1');
+  if(res.ok){
+   const data=await res.json(), hit=data.items?.[0];
+   if(hit?.volumeInfo){
+    const v=hit.volumeInfo;
+    book=v.title||null;authors=v.authors||[];publisher=v.publisher||'';
+    year=v.publishedDate||'';description=typeof v.description==='string'?v.description:'';
+    cover=(v.imageLinks?.thumbnail||v.imageLinks?.smallThumbnail||'').replace(/^http:/,'https:').replace(/zoom=\d+/,'zoom=1');
+    source='Google Books';
+   }
+  }
+ }catch(e){}
+ try{
+  const res=await fetch('https://openlibrary.org/isbn/'+encodeURIComponent(isbn)+'.json');
+  if(res.ok){
+   const b=await res.json();
+   if(!book)book=b.title||null;
+   edition=b.edition_name||b.edition_names?.[0]||'';
+   publisher=publisher||b.publishers?.[0]||'';
+   year=year||b.publish_date||'';
+   if(!cover&&b.covers?.[0])cover='https://covers.openlibrary.org/b/id/'+b.covers[0]+'-L.jpg';
+   if(!description&&typeof b.description==='string')description=b.description;
+   if(!description&&b.description?.value)description=b.description.value;
+   if(!authors.length&&b.authors?.length){
+    const authorData=await Promise.all(b.authors.slice(0,4).map(async a=>{
+     try{const r=await fetch('https://openlibrary.org'+a.key+'.json');return r.ok?(await r.json()).name:null}catch(e){return null}
+    }));
+    authors=authorData.filter(Boolean);
+   }
+   source=source?source+' + Open Library':'Open Library';
+  }
+ }catch(e){}
+ if(!book){status.textContent='No catalog match found. You can enter the textbook details manually.';return}
+ const titleInput=form.elements.namedItem('title');
+ if(!titleInput.value.trim())titleInput.value=book;
+ const imageInput=form.elements.namedItem('image_url');
+ if(cover&&!imageInput.value.trim())imageInput.value=cover;
+ const desc=form.elements.namedItem('description');
+ if(!desc.value.trim()){
+  const details=[
+   authors.length?'Authors: '+authors.join(', '):'',
+   edition?'Edition: '+edition:'',
+   publisher?'Publisher: '+publisher:'',
+   year?'Published: '+year:'',
+   description?description.replace(/<[^>]*>/g,'').slice(0,500):''
+  ].filter(Boolean).join('\n');
+  desc.value=details.slice(0,1000);
+ }
+ status.textContent='Found “'+book+'” via '+source+'. '+(cover?'Cover image added. ':'')+'Course prefix and number must be selected manually: an ISBN does not identify which TTU class requires the book.';
+}
+$('lookupIsbn').addEventListener('click',lookupIsbn);
+$('scanIsbn').addEventListener('click',async()=>{
+ const btn=$('scanIsbn'), status=$('isbnLookupStatus');
+ if(!navigator.mediaDevices?.getUserMedia){
+  status.textContent='Camera access requires HTTPS and a supported browser. Enter the ISBN manually or use a different browser.';return;
+ }
+ if(document.getElementById('bookarooScanner'))return;
+ const panel=document.createElement('div');panel.id='bookarooScanner';panel.className='scanner-panel';
+ const heading=document.createElement('div');heading.className='scanner-heading';heading.textContent='Point your camera at the ISBN barcode';
+ const reader=document.createElement('div');reader.id='bookarooScannerVideo';
+ const cancel=document.createElement('button');cancel.type='button';cancel.className='btn btn-muted';cancel.textContent='Close scanner';
+ panel.append(heading,reader,cancel);btn.closest('label').append(panel);
+ let scanner=null,done=false;
+ const cleanup=async()=>{if(done)return;done=true;try{await scanner?.stop()}catch(e){}try{scanner?.clear()}catch(e){}panel.remove()};
+ cancel.addEventListener('click',cleanup);
+ try{
+  if(!window.Html5Qrcode){
+   status.textContent='Loading barcode scanner…';
+   await new Promise((resolve,reject)=>{
+    const script=document.createElement('script');script.src='https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js';
+    script.onload=resolve;script.onerror=()=>reject(new Error('Could not load the barcode scanner library'));document.head.append(script)
+   });
+  }
+  if(done)return;
+  scanner=new Html5Qrcode(reader.id,{verbose:false});
+  const formats=window.Html5QrcodeSupportedFormats;
+  await scanner.start({facingMode:'environment'},{fps:10,qrbox:{width:260,height:140},formatsToSupport:[formats.EAN_13,formats.EAN_8,formats.UPC_A]},async decoded=>{
+   const value=decoded.replace(/[^0-9X]/gi,'');
+   if(!/^97[89]\d{10}$/.test(value)||done)return;
+   $('listingIsbn').value=value;
+   await cleanup();status.textContent='ISBN scanned: '+value+'. Looking up details…';await lookupIsbn();
+  },()=>{});
+  status.textContent='Scanner ready. Hold the ISBN barcode steady in the frame.';
+ }catch(e){await cleanup();status.textContent='Could not start the camera scanner: '+(e?.message||'Camera access denied')+'. You can enter the ISBN manually.'}
+});
+$('coursePrefixList').replaceChildren(...TTU_COURSE_PREFIXES.map(p=>new Option(p+' — '+(TTU_SUBJECTS[p]||'Texas Tech subject'),p)));document.querySelectorAll('[data-order-tab]').forEach(btn=>btn.addEventListener('click',()=>{orderTab=btn.dataset.orderTab;renderOrders()}));$('signupForm').addEventListener('submit',signUp);$('loginForm').addEventListener('submit',login);$('resetPassword').addEventListener('click',resetPassword);$('postForm').addEventListener('submit',post);$('checkoutBack').addEventListener('click',()=>openDetail(checkoutId));$('checkoutPay').addEventListener('click',purchaseNow);$('connectStripe').addEventListener('click',connectStripe);$('signOutBtn').addEventListener('click',async()=>{await db.auth.signOut();toast('Signed out')});$('accountBtn').addEventListener('click',()=>{if(authenticated()){switchView('dashboard')}else{showAuth()}});$('modalCancel').addEventListener('click',closeModal);$('modalConfirm').addEventListener('click',confirmModal);$('modalBack').addEventListener('click',e=>{if(e.target===$('modalBack'))closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('browseBtn').addEventListener('click',browseMarketplace);$('postBtn').addEventListener('click',()=>openListingForm());$('homeBtn').addEventListener('click',browseMarketplace);$('detailBack').addEventListener('click',()=>switchView('market'));$('backFromForm').addEventListener('click',()=>switchView('market'));$('backFromDashboard').addEventListener('click',()=>switchView('market'));$('cancelForm').addEventListener('click',()=>switchView('market'));let searchRenderTimer;$('search').addEventListener('input',()=>{clearTimeout(searchRenderTimer);searchRenderTimer=setTimeout(render,110)});$('sort').addEventListener('change',render);$('courseFilter').addEventListener('change',render);$('conditionFilter').addEventListener('change',render);$('availabilityFilter').addEventListener('change',render);$('maxPrice').addEventListener('input',render);$('refreshBtn').addEventListener('click',load);$('profileForm').addEventListener('submit',saveProfile);$('sellerClose').addEventListener('click',()=>$('sellerBack').classList.add('hidden'));$('sellerCloseTop').addEventListener('click',()=>$('sellerBack').classList.add('hidden'));$('sellerBack').addEventListener('click',e=>{if(e.target===$('sellerBack'))$('sellerBack').classList.add('hidden')});
 async function init(){if(!db){toast('Supabase library failed to load. Check your connection.');return}const {data}=await db.auth.getSession();session=data.session;showState();await load();db.auth.onAuthStateChange((_event,next)=>{session=next;showState();setTimeout(load,0)});setInterval(()=>{load()},60000);const query=new URLSearchParams(location.search);if(query.get('checkout')==='success')toast('Payment submitted. Check My Account for confirmation once Stripe processes it.');if(query.get('checkout')==='cancel')toast('Checkout canceled. No purchase confirmed.');if(query.has('connect'))toast('Stripe onboarding returned. Visit My Account to verify your seller status.')}init();
 })();
 </script><script>
