@@ -197,6 +197,9 @@ label,.section-top h2,.detail-info h2,.detail-info h3,.book h3,.panel h2,.panel 
 
 /* Bookaroo account avatar, seller reputation, compact checkout — existing theme and animations preserved */
 .account-trigger{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
+/* Equal-width account controls; keep existing colors, borders and motion. */
+#accountBtn,#signOutBtn{width:200px;min-height:48px;box-sizing:border-box;justify-content:center;text-align:center}
+@media(max-width:540px){#accountBtn,#signOutBtn{width:145px;min-height:42px;font-size:13px}}
 .account-avatar{width:29px;height:29px;flex:0 0 29px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;background:#872c49;color:#fff;border:1px solid #b96983;font-size:13px;font-weight:800;line-height:1}
 .account-avatar img{display:block;width:100%;height:100%;object-fit:cover}
 .account-rating{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:#1b1c27;border:1px solid #413448;border-radius:16px;padding:18px 22px;margin:20px 0 24px}
